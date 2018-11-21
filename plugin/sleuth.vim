@@ -23,6 +23,10 @@ function! s:guess(lines) abort
       continue
     endif
 
+    if line =~# '^\s*where'
+      continue
+    endif
+
     if line =~# '^\s*/\*'
       let ccomment = 1
     endif
